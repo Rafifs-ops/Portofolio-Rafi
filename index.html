@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
   <link rel="shortcut icon" href="img/fotorafi2-removebg-preview.png" type="image/x-icon">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
 </head>
 
 <body>
@@ -63,19 +66,19 @@
   <section id="about">
     <div class="container">
       <div class="row text-center mb-3">
-        <div class="col">
+        <div class="col" data-aos="fade-down">
           <h2>About me</h2>
         </div>
       </div>
       <div class="row justify-content-center fs-5">
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-right">
           <p>Lahir di Jakarta, 15 Februari 2006. Saya adalah seorang mahasiswa aktif Universitas Negeri 
             Jakarta jurusan S-1 Bisnis Digital angkatan 2024. Saya memiliki minat yang besar dalam dunia
             teknologi seperti web developer. Saya juga berminat dalam investasi seperti cryptocurrency dan memiliki 
             minat membaca buku tentang keuangan, ekonomi, dan sekuritas.
           </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
           <p>Saya lulusan SMA Cindera Mata pada tahun 2024 jurusan IPA. Saya dapat kuliah di Universitas Negeri Jakarta
             melalui jalur SNBT 2024 dengan skor sekitar 600-an. Saya tertarik menjadi web developer karena ingin menjadi
             bagian dari teknologi digital. Kedepannya saya ingin menjadi web developer yang sukses dan sekaligus lanjut 
@@ -104,7 +107,7 @@
       </div>
       <div class="row justify-content-center">
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-left" data-aos-duration="500">
             <img src="img/1.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Saya membuat & menjual e-book tentang bitcoin & meningkatkan
@@ -115,7 +118,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-delay="50" data-aos-duration="500">
             <img src="img/2.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Saya membuat home web page aplikasi suatu jasa .Ini adalah 
@@ -127,7 +130,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-left" data-aos-delay="100" data-aos-duration="500">
             <img src="img/3.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Saya membuat website yang menyediakan playlist Ultraman Blazar yang terdiri dari
@@ -138,7 +141,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-right" data-aos-delay="150" data-aos-duration="500">
             <img src="img/4.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Saya membuat akun Tiktok yang berisi edukasi tentang Bitcoin dan beberapa
@@ -150,7 +153,7 @@
           </div>
         </div>
         <div class="col-md-4 mb-3">
-          <div class="card">
+          <div class="card" data-aos="flip-left" data-aos-delay="200" data-aos-duration="500">
             <img src="img/5.png" class="card-img-top" alt="...">
             <div class="card-body">
               <p class="card-text">Saya membuat website yang berisi tentang suatu mobil, spesifikasinya, dan lain-lain.
@@ -251,6 +254,12 @@
         })
         .catch(error => console.error('Error!', error.message))
     })
+
+    AOS.init();
+
+    gsap.from('.jumbotron img', { duration: 1, rotateY: 360, opacity: 0})
+    gsap.from('.navbar', { duration: 1.5, y: '-100%', opacity: 0, ease: 'bounce'})
+
   </script>
 </body>
 
